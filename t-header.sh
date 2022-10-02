@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ "$1" == "--remove" ]]; then
-	rm -rf ~/.oh-my-zsh ~/.plugins;
+	rm -rf ~/.navajo~/.plugins;
 	chsh -s bash;
 	termux-reload-settings;
 	kill -9 $PPID
@@ -78,28 +78,28 @@ echo "";
 apt install figlet pv ncurses-utils binutils coreutils wget git zsh termux-api procps gawk exa termux-tools -y &> /dev/null;
 rubygem_d &> /dev/null
 termux-wake-lock;
-if [ -e $PREFIX/share/figlet/Remo773.flf ]; then
-	echo -e "\e[1;34m[*] \033[32mRemo773.flf figlet font is present\033[0m";
+if [ -e $PREFIX/share/figlet/navajo.flf ]; then
+	echo -e "\e[1;34m[*] \033[32mnavajo.flf figlet font is present\033[0m";
 	sleep 4
 else
-wget https://raw.githubusercontent.com/remo7777/REMO773/master/Remo773.flf &> /dev/null;
+wget https://raw.githubusercontent.com/navajo/navajo/master/navajo.flf &> /dev/null;
 sleep 3
-cp Remo773.flf $PREFIX/share/figlet/Remo773.flf;
+cp Remo773.flf $PREFIX/share/figlet/navajo.flf;
 cp ASCII-Shadow.flf $PREFIX/share/figlet/ASCII-Shadow.flf;
 sleep 3
-rm Remo773.flf
+rm Remonavajo.flf
 fi
 THEADER () 
 {
 clear;
 echo -e "\033[01;32m
-Remo773 (2020)
+navajo (2022)
 		
 	menu
 +---------------------------*/
 .......Terminal-Header......
 +---------------------------*/
-oh-my-zsh users only....
+navajo-11 users only....
 \033[0m";
 ok=0
 while [ $ok = 0 ];
@@ -220,7 +220,7 @@ echo -e "\e[1;32m
 +----------------------------------*/
 Remo773 : (\e[33m14.4.2021\e[32m)
 
-1. Oh-my-zsh
+1. navajo
 2. Zsh-syntax-highlight (\e[33mplugins\e[01;32m)
 3. Zsh-command-autosuggest (\e[33mplugins\e[01;32m)
 4. Terminal-Header
@@ -235,20 +235,20 @@ if [[ ${PROC33} == [Y/y] ]]; then
 
 
 ozsh=0
-if [ -d $HOME/.oh-my-zsh ]; then
-	(rm -rf $HOME/.oh-my-zsh/) &> /dev/null
+if [ -d $HOME/.navajo ]; then
+	(rm -rf $HOME/.na-va-jo/) &> /dev/null
 	(rm $HOME/.zshrc) &> /dev/null
 elif [ -d $HOME/.zsh ]; then
 	(rm -rf $HOME/.zsh) &> /dev/null
 else
-	echo -e "\e[1;34m[*] \e[32mYou hvnt oh-my-zsh...\e[0m";
+	echo -e "\e[1;34m[*] \e[32mYou hvnt na-va-jo...\e[0m";
 fi
 while [ $ozsh = 0 ];
 do
 	echo -e "\e[1;34m[*] \e[32mOh-my-zsh new setup....\e[0m";
 	echo "";
 
-	( rm -rf ~/.zshrc;git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh;cp "$HOME/.oh-my-zsh/templates/zshrc.zsh-template" "$HOME/.zshrc";termux-wake-unlock; ) &> /dev/null & spin;
+	( rm -rf ~/.zshrc;git clone  $HOME/.oh-my-zsh;cp "$HOME/.na-va-jo/templates/zshrc.zsh-template" "$HOME/.zshrc";termux-wake-unlock; ) &> /dev/null & spin;
 	chsh -s zsh;
 if [ -d $HOME/.oh-my-zsh ];
 then
