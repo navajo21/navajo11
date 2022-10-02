@@ -1,4 +1,4 @@
-newName = input("[+] enter the new name : ")
+newName = input("[+] navajo11 : ")
 newName = '"'+newName+'"'
 file  = open('/data/data/com.termux/files/home/.zshrc','r')
 allLines = []
@@ -8,7 +8,7 @@ for line in file.readlines():
         pos = i
     allLines.append(line)
     i+=1
-allLines[pos]="TNAME="+newName+"\n"
+allLines[pos]="TNAME="+navajo11+"\n"
 file.close()
 file = open('/data/data/com.termux/files/home/.zshrc','w')
 file.writelines(allLines)
